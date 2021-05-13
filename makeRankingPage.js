@@ -1,6 +1,4 @@
 module.exports = { loadPage };
-// module.exports = { loadPage };
-// module.exports = { loadPage };
 function loadPage(callback) {
   setTimeout(() => {
     const Ranking = require("./mainData");
@@ -29,7 +27,9 @@ function loadPage(callback) {
       crossorigin="anonymous"
     />
     <!-- Link CSS file -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style3.css" />
+    <link rel="stylesheet" href="style.css">
 
     <title>MovieSelector</title>
   </head>
@@ -44,6 +44,43 @@ function loadPage(callback) {
     ></script>
   </body>
 </html>`;
+      const body2 = `
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100" >
+          <img src="second.jpg" class="card-img-second" alt="현재 상영 2위">
+          <div class="card-body">
+            <h5 class="card-title"><strong>NO.2</strong>미나리</h5>
+            <p class="card-text">#드라마 <br>상영시간: 115분<br>평점: 8.33 <br>예매율: 5.4%</p>
+            <a href="http://www.cgv.co.kr/movies/detail-view/?midx=84273" class="btn btn-primary">More Information</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="card h-100">
+          <img src="first.jpg" class="card-img-first" alt="현재 상영 1위">
+          <div class="card-body">
+            <h5 class="card-title"><strong>NO.1</strong> <br>비와 당신의 이야기</h5>
+            <p class="card-text">#로맨스 #드라마 <br>상영시간: 117분<br>평점: 9.05 <br>예매율: 9.3%</p>
+            <a href="http://www.cgv.co.kr/movies/detail-view/?midx=84542" class="btn btn-primary">More Information</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div class="card h-100">
+          <img src="third.jpg" class="card-img-third" alt="현재 상영 3위">
+          <div class="card-body">
+            <h5 class="card-title"><strong>NO.3</strong> <br>극장판 귀멸의 칼날-무한 열차편</h5>
+            <p class="card-text">#애니메이션 <br>상영시간: 117분<br>평점: 9.62 <br>예매율: 5.3%</p>
+            <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=196051" class="btn btn-primary">More Information</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
       const body3 = `
 
     <h1>1 ${first.title},2 ${second.title},3 ${third.title}</h1>
@@ -180,7 +217,7 @@ function loadPage(callback) {
     </div>
 
   `;
-      const page = header + body3 + footer;
+      const page = header + body2 + body3 + footer;
       callback(page);
     });
   }, 0);
