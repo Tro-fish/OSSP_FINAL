@@ -1,8 +1,8 @@
 module.exports = { loadPage };
-function loadPage(callback) {
+function loadPage(nTheather, callback) {
   setTimeout(() => {
     const Ranking = require("./mainData");
-    Ranking.loadRanking((movieRanking) => {
+    Ranking.loadRanking(nTheather, (movieRanking) => {
       console.log(movieRanking);
       console.log("Load Ranking Done!");
       const first = movieRanking.shift();

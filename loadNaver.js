@@ -48,7 +48,6 @@ function searchNaver(callback) {
           if (count > 3 * MAX) return;
 
           if (!genre.innerHTML.includes("genre")) {
-            //console.log(`${count}th: ${genre}`);
             return;
           }
           genreInnerText = genre.innerText.trim();
@@ -59,7 +58,6 @@ function searchNaver(callback) {
           tempGenre = tempGenre.replace(/ /g, " #");
           naverGenreList.push("#" + tempGenre);
         });
-        //console.log(naverGenreList);
         count = 0;
         root.querySelectorAll(".num").forEach((score) => {
           count++;
@@ -82,12 +80,3 @@ function searchNaver(callback) {
     });
   }, 0);
 }
-
-/* check mainData.js
- 
-searchNaver((movie) => {
-  console.log(movie);
-  console.log("Done!");
-});
-
- */
