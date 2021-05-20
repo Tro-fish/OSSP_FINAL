@@ -1,17 +1,37 @@
 module.exports = { loadPage };
+function toEmpty() {
+  let empty = new Object();
+  empty.title = "";
+  empty.img = "";
+  empty.date = "";
+  empty.cgvScore = 0;
+  empty.cgvReserve = 0;
+  empty.genre = "";
+  empty.naverScore = 0;
+  empty.naverReserve = 0;
+  empty.avg = 0;
+  return empty;
+}
 function loadPage(nTheather, callback) {
   setTimeout(() => {
     const Ranking = require("./mainData");
     Ranking.loadRanking(nTheather, (movieRanking) => {
       console.log(movieRanking);
       console.log("Load Ranking Done!");
-      const first = movieRanking.shift();
-      const second = movieRanking.shift();
-      const third = movieRanking.shift();
-      const forth = movieRanking.shift();
-      const fifth = movieRanking.shift();
-      const sixth = movieRanking.shift();
-      const seventh = movieRanking.shift();
+      let first = movieRanking.shift();
+      let second = movieRanking.shift();
+      let third = movieRanking.shift();
+      let forth = movieRanking.shift();
+      let fifth = movieRanking.shift();
+      let sixth = movieRanking.shift();
+      let seventh = movieRanking.shift();
+      if (!first) first = toEmpty();
+      if (!second) second = toEmpty();
+      if (!third) third = toEmpty();
+      if (!forth) forth = toEmpty();
+      if (!fifth) fifth = toEmpty();
+      if (!sixth) sixth = toEmpty();
+      if (!seventh) seventh = toEmpty();
       const header = `<!DOCTYPE html>
 <html lang="en">
   <head>
