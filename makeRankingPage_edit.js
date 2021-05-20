@@ -68,10 +68,10 @@ function loadPage(nTheather, callback) {
       
       <div class="col">
         <div class="card" style="width: 22rem;">
-          <img src="{third.img}" class="card-img-third" alt="현재 상영 3위">
+          <img src="${third.img}" class="card-img-third" alt="현재 상영 3위">
           <div class="card-body">
-            <h5 class="card-title"><strong>NO.3</strong> <br>{third.title}</h5>
-            <p class="card-text">{third.genre} <br>개봉일: {third.date} <br>평균평점: {third.avg} <br>평균예매율: {third.reserve}%</p>
+            <h5 class="card-title"><strong>NO.3</strong> <br>${third.title}</h5>
+            <p class="card-text">${third.genre} <br>개봉일:${third.date} <br>평균평점:${third.avg} <br>평균예매율:${third.reserve}%</p>
           </div>
         </div>
       </div>
