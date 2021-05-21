@@ -1,9 +1,10 @@
 module.exports = { searchCgvMobile };
 
-const dataMovie = (title, img, date, cgvScore, cgvReserve) => {
+const dataMovie = (title, img, detail, date, cgvScore, cgvReserve) => {
   return {
     title: title,
     img: img,
+    detail: detail,
     date: date,
     cgvScore: cgvScore,
     cgvReserve: cgvReserve,
@@ -84,6 +85,7 @@ function searchCgvMobile(callback) {
             dataMovie(
               titleList[i],
               imgList[i],
+              detailList[i],
               releaseDateList[i],
               eggGreatList[i],
               perReserveList[i]
