@@ -40,6 +40,7 @@ function searchNaver(callback) {
           titleInnerText = title.innerText.trim();
           let temptitle = titleInnerText.split("</a>").join();
           temptitle = temptitle.split("\t").pop();
+          temptitle = temptitle.replace(/:/g, "-");
           navertitleList.push(temptitle);
         });
         count = 0;
