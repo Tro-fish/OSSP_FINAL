@@ -1,9 +1,10 @@
 module.exports = { searchCgvMobile };
 
-const dataMovie = (title, img, date, cgvScore, cgvReserve) => {
+const dataMovie = (title, img, detail, date, cgvScore, cgvReserve) => {
   return {
     title: title,
     img: img,
+    detail: detail,
     date: date,
     cgvScore: cgvScore,
     cgvReserve: cgvReserve,
@@ -14,6 +15,7 @@ function searchCgvMobile(callback) {
     let movieDatabase = new Array();
     let titleList = new Array();
     let imgList = new Array();
+    let detailList = new Array();
     let eggGreatList = new Array();
     let perReserveList = new Array();
     let releaseDateList = new Array();
@@ -35,6 +37,7 @@ function searchCgvMobile(callback) {
         let imgInnerHTML;
         let perReserveText;
         let dateText;
+        let movieIndex;
         let root = parser.parse(data);
 
         /*find movie title
@@ -52,8 +55,15 @@ function searchCgvMobile(callback) {
             imgInnerHTML = imgInnerHTML.pop();
             imgInnerHTML = imgInnerHTML.split('" alt').shift();
             imgInnerHTML = imgInnerHTML.replace("150.jpg", "320.jpg");
+            movieIndex = imgInnerHTML.split("/");
+            movieIndex = movieIndex.pop();
+            movieIndex = movieIndex.split("_");
+            movieIndex = movieIndex.shift();
           });
           imgList.push(imgInnerHTML);
+          detailList.push(
+            "http://www.cgv.co.kr/movies/detail-view/?midx=" + movieIndex
+          );
         });
 
         /*find cgv score - eggGreat*/
@@ -75,6 +85,7 @@ function searchCgvMobile(callback) {
             dataMovie(
               titleList[i],
               imgList[i],
+              detailList[i],
               releaseDateList[i],
               eggGreatList[i],
               perReserveList[i]

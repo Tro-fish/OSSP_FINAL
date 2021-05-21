@@ -1,37 +1,47 @@
 module.exports = { loadPage };
-function toEmpty() {
-  let empty = new Object();
-  empty.title = "";
-  empty.img = "";
-  empty.date = "";
-  empty.cgvScore = 0;
-  empty.cgvReserve = 0;
-  empty.genre = "";
-  empty.naverScore = 0;
-  empty.naverReserve = 0;
-  empty.avg = 0;
-  return empty;
-}
+const objEmpty = {
+  title: "",
+  img: "",
+  detail: "",
+  date: "",
+  cgvScore: 0,
+  cgvReserve: 0,
+  genre: "",
+  naverScore: 0,
+  naverReserve: 0,
+  etitle: "",
+  year: "",
+  avg: 0,
+  reserve: 0,
+};
+const theather = [
+  "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0049",
+  "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0012",
+  "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0041",
+  "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0242",
+  "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0257",
+];
 function loadPage(nTheather, callback) {
   setTimeout(() => {
     const Ranking = require("./mainData");
     Ranking.loadRanking(nTheather, (movieRanking) => {
       console.log(movieRanking);
       console.log("Load Ranking Done!");
+      const urlTimetable = theather[nTheather];
       let first = movieRanking.shift();
       let second = movieRanking.shift();
       let third = movieRanking.shift();
-      let forth = movieRanking.shift();
+      let fourth = movieRanking.shift();
       let fifth = movieRanking.shift();
       let sixth = movieRanking.shift();
       let seventh = movieRanking.shift();
-      if (!first) first = toEmpty();
-      if (!second) second = toEmpty();
-      if (!third) third = toEmpty();
-      if (!forth) forth = toEmpty();
-      if (!fifth) fifth = toEmpty();
-      if (!sixth) sixth = toEmpty();
-      if (!seventh) seventh = toEmpty();
+      if (!first) first = objEmpty;
+      if (!second) second = objEmpty;
+      if (!third) third = objEmpty;
+      if (!fourth) fourth = objEmpty;
+      if (!fifth) fifth = objEmpty;
+      if (!sixth) sixth = objEmpty;
+      if (!seventh) seventh = objEmpty;
       const header = `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,15 +57,192 @@ function loadPage(nTheather, callback) {
       crossorigin="anonymous"
     />
     <!-- Link CSS file -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="style3.css" />
-    <link rel="stylesheet" href="style.css">
 
     <title>MovieSelector</title>
   </head>
-  <body>`;
-      const footer = `<!-- Optional JavaScript; choose one of the two! -->
 
+  <body>`;
+
+      const body2 = `
+<div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card" style="width: 22rem">
+            <img
+              src="${second.img}"
+              class="card-img-second"
+              alt="현재 상영 2위"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong>NO.2</strong><br />${second.title}
+              </h5>
+              <p class="card-text">
+                ${second.genre} <br />개봉일: ${second.date}<br />평균평점:
+                ${second.avg} <br />${second.reserve}%
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 24rem">
+            <img
+              src="${first.img}"
+              class="card-img-first"
+              alt="현재 상영 1위"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong>NO.1</strong> <br />${first.title}
+              </h5>
+              <p class="card-text">
+                ${first.genre} <br />개봉일: ${first.date}<br />평균평점:
+                ${first.avg} <br />평균예매율: ${first.reserve}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 22rem">
+            <img
+              src="${third.img}"
+              class="card-img-third"
+              alt="현재 상영 3위"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong>NO.3</strong> <br />${third.title}
+              </h5>
+              <p class="card-text">
+                ${third.genre} <br />개봉일: ${third.date} <br />평균평점:
+                ${third.avg} <br />평균예매율: ${third.reserve}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
+      const body3 = `
+    <hr />
+    <img class="recommend" src="recommend.png" alt="logo" />
+
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="card" style="width: 18rem">
+            <a target="_blank" href="${fourth.detail}">
+              <img
+                src="${fourth.img}"
+                class="card-img-top"
+                alt="현재 상영 4위"
+              />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong> No.4 </strong><br />
+                ${fourth.title}
+              </h5>
+              <ul class="card-text">
+                <li>${fourth.genre}</li>
+                <li>개봉일: ${fourth.date}</li>
+                <li>평균평점: ${fourth.avg}</li>
+                <li>평균예매율: ${fourth.reserve}%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card" style="width: 18rem">
+            <a target="_blank" href="${fifth.detail}">
+              <img
+                src="${fifth.img}"
+                class="card-img-top"
+                alt="현재 상영 5위"
+              />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong>No.5</strong><br />
+                ${fifth.title}
+              </h5>
+              <ul class="card-text">
+                <li>${fifth.genre}</li>
+                <li>개봉일: ${fifth.date}</li>
+                <li>평균평점: ${fifth.avg}</li>
+                <li>평균예매율: ${fifth.reserve}%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card" style="width: 18rem">
+            <a target="_blank" href="${sixth.detail}">
+              <img
+                src="${sixth.img}"
+                class="card-img-top"
+                alt="현재 상영 6위"
+              />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong>No.6</strong><br />
+                ${sixth.title}
+              </h5>
+              <ul class="card-text">
+                <li>${sixth.genre}</li>
+                <li>개봉일: ${sixth.date}</li>
+                <li>평균평점: ${sixth.avg}</li>
+                <li>평균예매율: ${sixth.reserve}%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card" style="width: 18rem">
+            <a target="_blank" href="${seventh.detail}">
+              <img
+                src="${seventh.img}"
+                class="card-img-top"
+                alt="현재 상영 7위"
+              />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong>No.7</strong><br />
+                ${seventh.title}
+              </h5>
+              <ul class="card-text">
+                <li>${seventh.genre}</li>
+                <li>개봉일: ${seventh.date}</li>
+
+                <li>평균평점: ${seventh.avg}</li>
+                <li>예매율: ${seventh.reserve}%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <br /><a
+            class="btn btn-primary btn-lg"
+            target="_blank"
+            href="${urlTimetable}"
+            role="button"
+            >&#62;예매하러가기!&#60;</a
+          >
+        </div>
+      </div>
+    </div>
+  `;
+
+      const footer = `<!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
@@ -64,179 +251,6 @@ function loadPage(nTheather, callback) {
     ></script>
   </body>
 </html>`;
-      const body2 = `
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card h-100" >
-          <img src="second.jpg" class="card-img-second" alt="현재 상영 2위">
-          <div class="card-body">
-            <h5 class="card-title"><strong>NO.2</strong>미나리</h5>
-            <p class="card-text">#드라마 <br>상영시간: 115분<br>평점: 8.33 <br>예매율: 5.4%</p>
-            <a href="http://www.cgv.co.kr/movies/detail-view/?midx=84273" class="btn btn-primary">More Information</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col">
-        <div class="card h-100">
-          <img src="first.jpg" class="card-img-first" alt="현재 상영 1위">
-          <div class="card-body">
-            <h5 class="card-title"><strong>NO.1</strong> <br>비와 당신의 이야기</h5>
-            <p class="card-text">#로맨스 #드라마 <br>상영시간: 117분<br>평점: 9.05 <br>예매율: 9.3%</p>
-            <a href="http://www.cgv.co.kr/movies/detail-view/?midx=84542" class="btn btn-primary">More Information</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col">
-        <div class="card h-100">
-          <img src="third.jpg" class="card-img-third" alt="현재 상영 3위">
-          <div class="card-body">
-            <h5 class="card-title"><strong>NO.3</strong> <br>극장판 귀멸의 칼날-무한 열차편</h5>
-            <p class="card-text">#애니메이션 <br>상영시간: 117분<br>평점: 9.62 <br>예매율: 5.3%</p>
-            <a href="https://movie.naver.com/movie/bi/mi/basic.nhn?code=196051" class="btn btn-primary">More Information</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    `;
-      const body3 = `
-
-    <h1>1 ${first.title},2 ${second.title},3 ${third.title}</h1>
-    <hr />
-    <p>이런 영화도 있어요</p>
-    <div class="container">
-      <div class="row">
-        <div class="col-3">
-          <div class="accordion" id="accordionPanelsStayOpenExample">
-            <strong>4위</strong>
-            <div class="accordion-item">
-              <img src="${forth.img}" width="200px" height="auto" alt="4" />
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne"
-                aria-expanded="true"
-                aria-controls="panelsStayOpen-collapseOne"
-              >
-                <p>${forth.title}</p>
-              </button>
-              <div
-                id="panelsStayOpen-collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="panelsStayOpen-headingOne"
-              >
-                <div class="accordion-body">
-                  <ul>
-                    <li>개봉일: ${forth.date}</li>
-                    <li>장르: ${forth.genre}</li>
-                    <li>평균평점: ${forth.avg}</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="accordion" id="accordionPanelsStayOpenExample">
-            <strong>5위</strong>
-            <div class="accordion-item">
-              <img src="${fifth.img}" width="200px" height="auto" alt="5" />
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne"
-                aria-expanded="true"
-                aria-controls="panelsStayOpen-collapseOne"
-              >
-                <p>${fifth.title}</p>
-              </button>
-              <div
-                id="panelsStayOpen-collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="panelsStayOpen-headingOne"
-              >
-                <div class="accordion-body">
-                  <ul>
-                    <li>개봉일: ${fifth.date}</li>
-                    <li>장르: ${fifth.genre}</li>
-                    <li>평균평점: ${fifth.avg}</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="accordion" id="accordionPanelsStayOpenExample">
-            <strong>6위</strong>
-            <div class="accordion-item">
-              <img src="${sixth.img}" width="200px" height="auto" alt="6" />
-
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne"
-                aria-expanded="true"
-                aria-controls="panelsStayOpen-collapseOne"
-              >
-                <p>${sixth.title}</p>
-              </button>
-              <div
-                id="panelsStayOpen-collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="panelsStayOpen-headingOne"
-              >
-                <div class="accordion-body">
-                  <ul>
-                    <li>개봉일: ${sixth.date}</li>
-                    <li>장르: ${sixth.genre}</li>
-                    <li>평균평점: ${sixth.avg}</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="accordion" id="accordionPanelsStayOpenExample">
-            <strong>7위</strong>
-            <div class="accordion-item">
-              <img src="${seventh.img}" width="200px" height="auto" alt="7" />
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#panelsStayOpen-collapseOne"
-                aria-expanded="true"
-                aria-controls="panelsStayOpen-collapseOne"
-              >
-                <p>${seventh.title}</p>
-              </button>
-              <div
-                id="panelsStayOpen-collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="panelsStayOpen-headingOne"
-              >
-                <div class="accordion-body">
-                  <ul>
-                    <li>개봉일: ${seventh.date}</li>
-                    <li>장르: ${seventh.genre}</li>
-                    <li>평균평점: ${seventh.avg}</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  `;
       const page = header + body2 + body3 + footer;
       callback(page);
     });

@@ -25,6 +25,6 @@ app.get("/ranking", function (req, res) {
 
 app.listen(3000, function () {
   console.log("Connected 3000 port!");
-  console.log("http://localhost:3000/mainInterface.html");
+  console.log("http://localhost:3000/main_interface.html");
   console.log("http://localhost:3000/ranking?theather=0");
 });
