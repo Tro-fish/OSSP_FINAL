@@ -1,7 +1,9 @@
 p {
   text-align: center;
 }
-img {
+
+img.recommend {
   display: block;
+  align-content: center;
   margin: 0px auto;
 }
