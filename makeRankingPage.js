@@ -132,16 +132,17 @@ function loadPage(nTheather, callback) {
     `;
       const body3 = `
     <hr />
-    <img class="recommend" src="recommend.png" alt="logo" />
-
     <div class="container">
+      <div class="row mt-5 mb-5">
+        <img class="recommend" src="recommend.jpg" alt="logo" />
+      </div>
       <div class="row">
-        <div class="col-3">
-          <div class="card" style="width: 18rem">
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-2 mb-2">
+          <div class="card shadow ps-0 pe-0 rounded-3 w-100" style="width: 18rem">
             <a target="_blank" href="${fourth.detail}">
               <img
                 src="${fourth.img}"
-                class="card-img-top"
+                class="card-img-top ps-0 pe-0 rounded-3 w-100"
                 alt="현재 상영 4위"
               />
             </a>
@@ -159,8 +160,8 @@ function loadPage(nTheather, callback) {
             </div>
           </div>
         </div>
-        <div class="col-3">
-          <div class="card" style="width: 18rem">
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-2 mb-2">
+          <div class="card shadow ps-0 pe-0 rounded-3 w-100" style="width: 18rem">
             <a target="_blank" href="${fifth.detail}">
               <img
                 src="${fifth.img}"
@@ -182,8 +183,8 @@ function loadPage(nTheather, callback) {
             </div>
           </div>
         </div>
-        <div class="col-3">
-          <div class="card" style="width: 18rem">
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-2 mb-2">
+          <div class="card shadow ps-0 pe-0 rounded-3 w-100" style="width: 18rem">
             <a target="_blank" href="${sixth.detail}">
               <img
                 src="${sixth.img}"
@@ -205,8 +206,8 @@ function loadPage(nTheather, callback) {
             </div>
           </div>
         </div>
-        <div class="col-3">
-          <div class="card" style="width: 18rem">
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-1 mb-1">
+          <div class="card shadow ps-0 pe-0 rounded-3 w-100" style="width: 18rem">
             <a target="_blank" href="${seventh.detail}">
               <img
                 src="${seventh.img}"
@@ -229,15 +230,21 @@ function loadPage(nTheather, callback) {
             </div>
           </div>
         </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <br /><a
-            class="btn btn-primary btn-lg"
-            target="_blank"
-            href="${urlTimetable}"
-            role="button"
-            >&#62;예매하러가기!&#60;</a
-          >
+        <div class="row mt-2 mb-5">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <br /><a
+              class="btn btn-primary btn-lg"
+              target="_blank"
+              href="${urlTimetable}"
+              role="button"
+              >&#62;예매하러가기!&#60;</a
+            >
+          </div>
         </div>
+        <hr />
+        <a class="top" href="#" title="top"
+          ><i class="bi bi-arrow-up-short"></i>TOP</a
+        >
       </div>
     </div>
   `;
