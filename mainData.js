@@ -24,8 +24,8 @@ function loadRanking(nTheather, callback) {
                 Math.round((100 * (obj.cgvScore + 10 * obj.naverScore)) / 2) /
                 100;
             }
-            obj.reserve =
-              Math.round((obj.naverReserve + obj.cgvReserve) / 2) / 10; //예매율 추가
+            obj.reserve = obj.reserve =
+              Math.round((10 * (obj.naverReserve + obj.cgvReserve)) / 2) / 10; //예매율 추가
             return obj;
           });
           sortMovieScore(movieDatabase);
