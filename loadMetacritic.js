@@ -6,6 +6,7 @@ function searchMetacritic(movieList, callback) {
       let title = movieList[i].title;
       let year = new Array();
       let etitle = new String();
+      title = title.replace(/-/g, ":");
 
       const https = require("https");
       const parser = require("node-html-parser");
@@ -64,7 +65,6 @@ function searchMetacritic(movieList, callback) {
                 scoreInnerText = score.innerText.trim();
                 movieList[i].metacriticScore = parseFloat(scoreInnerText);
                 callback(movieList);
-                //console.log("url2: " + movieList[i].metacriticScore);
               } else {
                 const Url1 =
                   "https://www.metacritic.com/movie/" +
@@ -88,10 +88,8 @@ function searchMetacritic(movieList, callback) {
                     if (score) {
                       scoreInnerText = score.innerText.trim();
                       movieList[i].metacriticScore = parseFloat(scoreInnerText);
-                      //console.log("url1: " + movieList[i].metacriticScore);
                       callback(movieList);
                     } else {
-                      //console.log("score?");
                       callback(movieList);
                     }
                   });
