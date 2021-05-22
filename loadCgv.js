@@ -23,7 +23,7 @@ function searchCgvMobile(callback) {
     const http = require("http");
     const parser = require("node-html-parser");
     let urlCGVm =
-      "http://m.cgv.co.kr/WebAPP/MovieV4/movieList.aspx?mtype=now&iPage=1";
+      "http://m.cgv.co.kr/WebAPP/MovieV4/movieList.aspx?mtype=now&iPage=2&MNowFlag=1";
 
     http.get(urlCGVm, (res) => {
       let data = "";
