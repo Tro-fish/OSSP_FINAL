@@ -21,13 +21,6 @@ const theather = [
   "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0242",
   "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0257"
 ];
-const theatherName = [
-  "CGV북수원",
-  "CGV수원",
-  "CGV동수원",
-  "CGV산본",
-  "CGV광교"
-];
 function loadPage(nTheather, callback) {
   setTimeout(() => {
     const Ranking = require("./mainData");
@@ -343,22 +336,22 @@ function detailButton(obj) {
       data-bs-toggle="modal"
       data-bs-target="#staticBackdrop"
       `;
-  if (obj.title) {
+  if (typeof obj.title !== "undefined") {
     buttonHTML += ` data-bs-tit=" ${obj.title}"`;
   }
-  if (obj.cgvScore) {
+  if (typeof obj.cgvScore !== "undefined") {
     buttonHTML += ` data-bs-CS=" ${obj.cgvScore}"`;
   }
-  if (obj.naverScore) {
+  if (typeof obj.naverScore !== "undefined") {
     buttonHTML += ` data-bs-NS=" ${obj.naverScore}"`;
   }
-  if (obj.metacriticScore) {
+  if (typeof obj.metacriticScore !== "undefined") {
     buttonHTML += ` data-bs-MS=" ${obj.metacriticScore}"`;
   }
-  if (obj.cgvReserve) {
+  if (typeof obj.cgvReserve !== "undefined") {
     buttonHTML += ` data-bs-CR=" ${obj.cgvReserve}"`;
   }
-  if (obj.naverReserve) {
+  if (typeof obj.naverReserve !== "undefined") {
     buttonHTML += ` data-bs-NR=" ${obj.naverReserve}"`;
   }
   buttonHTML += `
