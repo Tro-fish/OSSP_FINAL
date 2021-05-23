@@ -12,26 +12,26 @@ const objEmpty = {
   etitle: "",
   year: "",
   avg: 0,
-  reserve: 0,
+  reserve: 0
 };
 const theather = [
   "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0049",
   "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0012",
   "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0041",
   "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0242",
-  "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0257",
+  "http://www.cgv.co.kr/theaters/?areacode=02&theaterCode=0257"
 ];
 const theatherName = [
   "CGV북수원",
   "CGV수원",
   "CGV동수원",
   "CGV산본",
-  "CGV광교",
+  "CGV광교"
 ];
 function loadPage(nTheather, callback) {
   setTimeout(() => {
     const Ranking = require("./mainData");
-    Ranking.loadRanking(nTheather, (movieRanking) => {
+    Ranking.loadRanking(nTheather, movieRanking => {
       console.log(movieRanking);
       console.log("Load Ranking Done!");
       const urlTimetable = theather[nTheather];
@@ -76,13 +76,18 @@ function loadPage(nTheather, callback) {
   <body>`;
 
       let body1 = `<div class="container">
-      <h1 class="ms-3 me-3 mt-3">${theatherName[nTheather]}</h1>
+      <img
+          class="ps-0 pe-0 rounded-3 w-100"
+          src="theather${nTheather}.jpg"
+          alt="Title_Logo"
+        />
     </div>
-    <hr />`;
+    <hr />
+    <div class="container">`;
 
       let body2 = "";
       if (second.title)
-        body2 += `<div class="container">
+        body2 += `
       <div class="row g-4 row mt-3 mb-5">
         <div class="col-lg-4 col-md-12 col-sm-12">
           <div
@@ -166,11 +171,12 @@ function loadPage(nTheather, callback) {
             </div>
           </div>
         </div>
-      </div>
-    </div>`;
+      </div>`;
+      body2 += `</div>`;
+
       let body3_top = `<div class="container">
       <hr />`;
-      if (movieRanking[0].title)
+      if (movieRanking[0])
         body3_top += `
       <div class="row mt-5 mb-5">
         <img
