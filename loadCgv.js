@@ -7,7 +7,7 @@ const dataMovie = (title, img, detail, date, cgvScore, cgvReserve) => {
     detail: detail,
     date: date,
     cgvScore: cgvScore,
-    cgvReserve: cgvReserve,
+    cgvReserve: cgvReserve
   };
 };
 function searchCgvMobile(callback) {
@@ -25,10 +25,10 @@ function searchCgvMobile(callback) {
     let urlCGVm =
       "http://m.cgv.co.kr/WebAPP/MovieV4/movieList.aspx?mtype=now&iPage=2&MNowFlag=1";
 
-    http.get(urlCGVm, (res) => {
+    http.get(urlCGVm, res => {
       let data = "";
 
-      res.on("data", (d) => {
+      res.on("data", d => {
         data += d;
       });
       res.on("end", () => {
@@ -42,15 +42,15 @@ function searchCgvMobile(callback) {
 
         /*find movie title
          * but Some is not the title of movie */
-        root.querySelectorAll(".tit").forEach((title) => {
+        root.querySelectorAll(".tit").forEach(title => {
           titleInnerText = title.innerText.trim();
           titleList.push(titleInnerText);
         });
 
         /*find poster url*/
-        root.querySelectorAll(".imgbox").forEach((img) => {
+        root.querySelectorAll(".imgbox").forEach(img => {
           imgInnerHTML = img.innerHTML.trim();
-          titleList.forEach((title) => {
+          titleList.forEach(title => {
             imgInnerHTML = imgInnerHTML.split('<img src="');
             imgInnerHTML = imgInnerHTML.pop();
             imgInnerHTML = imgInnerHTML.split('" alt').shift();
@@ -67,16 +67,16 @@ function searchCgvMobile(callback) {
         });
 
         /*find cgv score - eggGreat*/
-        root.querySelectorAll(".percent, .eggState").forEach((eggGreat) => {
+        root.querySelectorAll(".percent, .eggState").forEach(eggGreat => {
           eggGreatInnerText = eggGreat.innerText;
           eggGreatList.push(parseInt(eggGreatInnerText));
         });
         /*find cgv reserve rate*/
-        root.querySelectorAll(".per_reserve").forEach((perReserve) => {
+        root.querySelectorAll(".per_reserve").forEach(perReserve => {
           perReserveText = perReserve.innerText.split("예매율 ").pop();
           perReserveList.push(parseFloat(perReserveText));
         });
-        root.querySelectorAll(".rel_date").forEach((date) => {
+        root.querySelectorAll(".rel_date").forEach(date => {
           dateText = date.innerText.split(" ").shift();
           releaseDateList.push(dateText);
         });
@@ -97,3 +97,4 @@ function searchCgvMobile(callback) {
     });
   }, 0);
 }
+console.log("");

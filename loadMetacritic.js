@@ -13,10 +13,10 @@ function searchMetacritic(movieList, callback) {
       const Url =
         "https://search.naver.com/search.naver?ie=utf8&query=" + title;
 
-      https.get(Url, (res) => {
+      https.get(Url, res => {
         let data = "";
 
-        res.on("data", (d) => {
+        res.on("data", d => {
           data += d;
         });
         res.on("end", () => {
@@ -47,10 +47,10 @@ function searchMetacritic(movieList, callback) {
             movieList[i].year +
             "/critic-reviews";
 
-          https.get(Url2, (res) => {
+          https.get(Url2, res => {
             let data = "";
 
-            res.on("data", (d) => {
+            res.on("data", d => {
               data += d;
             });
             res.on("end", () => {
@@ -70,10 +70,10 @@ function searchMetacritic(movieList, callback) {
                   "https://www.metacritic.com/movie/" +
                   movieList[i].etitle +
                   "/critic-reviews";
-                https.get(Url1, (res) => {
+                https.get(Url1, res => {
                   let data = "";
 
-                  res.on("data", (d) => {
+                  res.on("data", d => {
                     data += d;
                   });
                   res.on("end", () => {

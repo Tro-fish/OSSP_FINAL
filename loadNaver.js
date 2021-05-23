@@ -5,7 +5,7 @@ const dataMovie = (title, genre, naverScore, naverReserve) => {
     title: title,
     genre: genre,
     naverScore: naverScore,
-    naverReserve: naverReserve,
+    naverReserve: naverReserve
   };
 };
 function searchNaver(callback) {
@@ -19,10 +19,10 @@ function searchNaver(callback) {
     let navertitleList = new Array();
     let naverGenreList = new Array();
     let scoreList = new Array();
-    https.get(urlNaver, (res) => {
+    https.get(urlNaver, res => {
       let data = "";
 
-      res.on("data", (d) => {
+      res.on("data", d => {
         data += d;
       });
       res.on("end", () => {
@@ -34,7 +34,7 @@ function searchNaver(callback) {
 
         let root = parser.parse(data);
         /*InnerText -> only movie title*/
-        root.querySelectorAll(".tit").forEach((title) => {
+        root.querySelectorAll(".tit").forEach(title => {
           count++;
           if (count > MAX) return;
           titleInnerText = title.innerText.trim();
@@ -44,7 +44,7 @@ function searchNaver(callback) {
           navertitleList.push(temptitle);
         });
         count = 0;
-        root.querySelectorAll(".link_txt").forEach((genre) => {
+        root.querySelectorAll(".link_txt").forEach(genre => {
           count++;
           if (count > 3 * MAX) return;
 
@@ -60,7 +60,7 @@ function searchNaver(callback) {
           naverGenreList.push("#" + tempGenre);
         });
         count = 0;
-        root.querySelectorAll(".num").forEach((score) => {
+        root.querySelectorAll(".num").forEach(score => {
           count++;
           if (count > 2 * MAX) return; // too much movie! limit number of movie
           scoreInnerText = score.innerText.trim();

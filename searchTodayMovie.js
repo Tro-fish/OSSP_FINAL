@@ -8,7 +8,7 @@ function searchTodayMovie(nTheather, callback) {
       "http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=02&theatercode=0012",
       "http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=02&theatercode=0041",
       "http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=02&theatercode=0242",
-      "http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=02&theatercode=0257",
+      "http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=02&theatercode=0257"
     ];
     const urlCGVm = theather[nTheather];
     const http = require("http");
@@ -18,17 +18,17 @@ function searchTodayMovie(nTheather, callback) {
       return 0;
     }
     console.log(urlCGVm);
-    http.get(urlCGVm, (res) => {
+    http.get(urlCGVm, res => {
       let data = "";
 
-      res.on("data", (d) => {
+      res.on("data", d => {
         data += d;
       });
       res.on("end", () => {
         let titleInnerText;
         let root = parser.parse(data);
 
-        root.querySelectorAll(".info-movie").forEach((title) => {
+        root.querySelectorAll(".info-movie").forEach(title => {
           titleInnerText = title.innerText.trim();
           titleInnerText = titleInnerText
             .split("\r")

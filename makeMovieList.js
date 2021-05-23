@@ -7,9 +7,9 @@ function loadRanking(nTheather, callback) {
 
     let movieDatabase = new Array();
     let todayTitleList = new Array();
-    loadCgv.searchCgvMobile((cgvList) => {
+    loadCgv.searchCgvMobile(cgvList => {
       movieDatabase = cgvList;
-      todayMovie.searchTodayMovie(nTheather, (todayList) => {
+      todayMovie.searchTodayMovie(nTheather, todayList => {
         todayTitleList = todayList;
 
         for (let i = 0; i < movieDatabase.length; i++) {
@@ -20,7 +20,7 @@ function loadRanking(nTheather, callback) {
           } else continue;
         }
 
-        loadNaver.searchNaver((naverList) => {
+        loadNaver.searchNaver(naverList => {
           for (let i = 0; i < movieDatabase.length; i++) {
             let idx = getTitleIndex(naverList, movieDatabase[i]); // exist return idx, not -1
 

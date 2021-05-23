@@ -3,13 +3,13 @@ function loadRanking(nTheather, callback) {
   setTimeout(() => {
     const loadDatabase = require("./makeMovieList");
     const loadMetacritic = require("./loadMetacritic");
-    loadDatabase.loadRanking(nTheather, (movieDatabase) => {
+    loadDatabase.loadRanking(nTheather, movieDatabase => {
       let count = 0;
-      loadMetacritic.searchMetacritic(movieDatabase, (metacritic) => {
+      loadMetacritic.searchMetacritic(movieDatabase, metacritic => {
         count++;
         movieDatabase = metacritic;
         if (count === movieDatabase.length) {
-          movieDatabase = movieDatabase.map((obj) => {
+          movieDatabase = movieDatabase.map(obj => {
             if (obj.metacriticScore) {
               obj.avg =
                 Math.round(
