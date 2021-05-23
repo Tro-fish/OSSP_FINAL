@@ -2,6 +2,10 @@ const express = require("express");
 const ranking = require("./makeRankingPage");
 
 const app = express();
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
 
 app.use(express.static("public"));
 app.get("/", function (req, res) {
@@ -12,10 +16,8 @@ app.get("/ranking", function (req, res) {
   let HTMLpage;
   let num = req.query.theather;
   if (0 <= num && num < 5) {
-    ranking.loadPage(num, (page) => {
-      console.log("theather Number:" + num);
+    ranking.loadPage(num, page => {
       HTMLpage = page;
-      console.log("Done!");
       res.send(HTMLpage);
     });
   } else {
@@ -23,8 +25,6 @@ app.get("/ranking", function (req, res) {
   }
 });
 
-app.listen(3000, function () {
-  console.log("Connected 3000 port!");
-  console.log("http://localhost:3000/main_interface.html");
-  console.log("http://localhost:3000/ranking?theather=0");
+app.listen(port, function () {
+  console.log(`http://localhost:${port}`);
 });
