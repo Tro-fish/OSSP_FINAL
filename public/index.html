@@ -1,145 +1,248 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
     <style>
-        body{
-          /*background-image : url('3.jpg');          */
-        }
+      body {
+        /*background-image : url('3.jpg');          */
+      }
 
-        #exampleModal{
-          margin: 0 auto;
-        }
-        
-         #navbar{
-          border-radius : 35px;
-          margin-top: 30px;
-          width :1000px                                      
-        }
-        
-        #name{            
-            font-style :italic;
-            margin-left: 50px ;
-            font-size : 20px;
-        }
-        #information{
-           left : 400px;
-                         
-        }     
-        #bold{
-            padding-top : 25px;
-            font-size : 22px;
-            font-weight: bold;
-            color : indigo;
-        }
-        #dropdownMenuButton1{
-          margin-left: 5px;
-        }
-        .modal-body{
-          width: 1000px;
-          
-        }
+      #exampleModal {
+        margin: 0 auto;
+      }
+
+      #navbar {
+        border-radius: 35px;
+        margin-top: 30px;
+        width: 1000px;
+      }
+
+      #name {
+        font-style: italic;
+        margin-left: 50px;
+        font-size: 20px;
+      }
+      #information {
+        left: 400px;
+      }
+      #bold {
+        padding-top: 25px;
+        font-size: 22px;
+        font-weight: bold;
+        color: indigo;
+      }
+      #dropdownMenuButton1 {
+        margin-left: 5px;
+      }
+      .modal-body {
+        width: 1000px;
+      }
     </style>
-   <title>SKKU_MOVIE_SELECTOR</title>
-
+    <title>SKKU_MOVIE_SELECTOR</title>
   </head>
   <body>
-   
-    <nav class="navbar navbar-light bg-light text-nowrap" >
-      <div class="container-fluid text-nowrap" style ="font-weight: 30;">
-        <a class="navbar-brand text-nowrap" href="https://cs.skku.edu/ko/" target="_blank" style ="font-style:oblique;">
-          <img src="SKKU.jpg" alt="" width="40" height="24" class="d-inline-block align-text-center text-nowrap">
+    <nav class="navbar navbar-light bg-light text-nowrap">
+      <div class="container-fluid text-nowrap" style="font-weight: 30">
+        <a
+          class="navbar-brand text-nowrap"
+          href="https://cs.skku.edu/ko/"
+          target="_blank"
+          style="font-style: oblique"
+        >
+          <img
+            src="SKKU.jpg"
+            alt=""
+            width="40"
+            height="24"
+            class="d-inline-block align-text-center text-nowrap"
+          />
           SKKU - Movie Selector
-        </a>          
-        <div class="dropdown text-nowrap text-nowrap" id ="information">          
-
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        </a>
+        <div class="dropdown text-nowrap text-nowrap" id="information">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             About us
           </button>
-          <ul class="dropdown-menu text-nowrap" aria-labelledby="dropdownMenuButton1">
-
-              <div class="card" style="width: 18rem;">
-                  <img src="Skku_software.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><em>Sungkyunwan University<br> Department of Software</h5></em>
-                    <p class="card-text">Final Team Project Group 16
-                        <br> 박성완 - 2020314496 <br>
-                             서정엽 - 2018313398 <br>
-                             엄계현 - 2018315479 </p>
-                    <a href="https://cs.skku.edu/ko/" target="_blank" class="btn btn-primary">Visit Our University Website!</a>
-                  </div>
-              </div>                
+          <ul
+            class="dropdown-menu text-nowrap"
+            aria-labelledby="dropdownMenuButton1"
+          >
+            <div class="card" style="width: 18rem">
+              <img src="Skku_software.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <em
+                    >Sungkyunwan University<br />
+                    Department of Software</em
+                  >
+                </h5>
+                <p class="card-text">
+                  Final Team Project Group 16 <br />
+                  박성완 - 2020314496 <br />
+                  서정엽 - 2018313398 <br />
+                  엄계현 - 2018315479
+                </p>
+                <a
+                  href="https://cs.skku.edu/ko/"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Visit Our University Website!</a
+                >
+              </div>
+            </div>
           </ul>
 
-
-          <button class="btn btn-secondary dropdown-toggle text-nowrap" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Contact us
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-
-                <div class="card" style="width: 18rem;">
-                    <img src="https://media.vlpt.us/images/gil0127/post/857b454c-74a1-4fbc-b00f-3d0aff6f1a55/111111111.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title" style ="font-size : 17px"><em>We welcome your feedback!</em></h5>
-                      <p class="card-text">Our email address
-                          <br> 박성완 - dreamnawas@naver.com <br>
-                               서정엽 - sjyswe99@gmail.com <br>
-                               엄계현 - sally980330@naver.com </p>
-                      <a href="https://github.com/16OS-final-project" target="_blank" class="btn btn-primary">Visit Our Github!</a>
-                    </div>
-                </div>                
-            </ul>
-
-        </div> 
-        </p>
+          <button
+            class="btn btn-secondary dropdown-toggle text-nowrap"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Contact us
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://media.vlpt.us/images/gil0127/post/857b454c-74a1-4fbc-b00f-3d0aff6f1a55/111111111.png"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 17px">
+                  <em>We welcome your feedback!</em>
+                </h5>
+                <p class="card-text">
+                  Our email address <br />
+                  박성완 - dreamnawas@naver.com <br />
+                  서정엽 - sjyswe99@gmail.com <br />
+                  엄계현 - sally980330@naver.com
+                </p>
+                <a
+                  href="https://github.com/16OS-final-project"
+                  target="_blank"
+                  class="btn btn-primary"
+                  >Visit Our Github!</a
+                >
+              </div>
+            </div>
+          </ul>
+        </div>
+        <p></p>
       </div>
-      
     </nav>
 
-      
-    
-    <p> 
-        <br>
-        <br><br>                              
+    <p>
+      <br />
+      <br /><br />
     </p>
 
     <style>
-        img { display: block; margin: 10px auto;  border-radius : 20px;}
+      img {
+        display: block;
+        margin: 10px auto;
+        border-radius: 20px;
+      }
     </style>
-    <img src="movie-selector.jpg " style = "margin-bottom: 10px; margin-top: 40px;" width = "38%">
+    <img
+      src="movie-selector.jpg "
+      style="margin-bottom: 10px; margin-top: 40px"
+      width="38%"
+      alt="main-logo"
+    />
 
-
-<center>
-    <nav class="navbar navbar-light bg-light text-nowrap" id = "navbar">
+    <center>
+      <nav class="navbar navbar-light bg-light text-nowrap" id="navbar">
         <div class="container-fluid">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-eyeglasses" viewBox="0 0 20 20">
-                <path d="M4 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
-              </svg>           
-          <p class="navbar-brand text-nowrap" id = "name" style = "padding : 0px"> <span id = "bold"><em>Choose A Movie Theater Here!</em></span> </p>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-eyeglasses"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M4 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"
+            />
+          </svg>
+          <p class="navbar-brand text-nowrap" id="name" style="padding: 0px">
+            <span id="bold"><em>Choose A Movie Theater Here!</em></span>
+          </p>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a id ="CGV_1" class="nav-link active" aria-current="page" href="https://stormy-dawn-75717.herokuapp.com/ranking?theather=0" target="_blank">CGV 북수원</a>
+                <a
+                  id="CGV_1"
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/ranking?theather=0"
+                  target="_blank"
+                  >CGV 북수원</a
+                >
               </li>
               <li class="nav-item">
-                <a id ="CGV_2" class="nav-link active" aria-current="page" href="https://stormy-dawn-75717.herokuapp.com/ranking?theather=1" target="_blank">CGV 수원</a>
+                <a
+                  id="CGV_2"
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/ranking?theather=1"
+                  target="_blank"
+                  >CGV 수원</a
+                >
               </li>
-              <li id ="CGV_3" class="nav-item">
-                <a class="nav-link active" aria-current="page" href="https://stormy-dawn-75717.herokuapp.com/ranking?theather=2" target="_blank">CGV 동수원</a>
+              <li id="CGV_3" class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/ranking?theather=2"
+                  target="_blank"
+                  >CGV 동수원</a
+                >
               </li>
-              <li id ="CGV_4" class="nav-item">
-                <a class="nav-link active" aria-current="page" href="https://stormy-dawn-75717.herokuapp.com/ranking?theather=3" target="_blank">CGV 산본</a>
+              <li id="CGV_4" class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/ranking?theather=3"
+                  target="_blank"
+                  >CGV 산본</a
+                >
               </li>
-              <li id ="CGV_5" class="nav-item">
-                <a class="nav-link active" aria-current="page" href="https://stormy-dawn-75717.herokuapp.com/ranking?theather=4" target="_blank">CGV 광교</a>
+              <li id="CGV_5" class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/ranking?theather=4"
+                  target="_blank"
+                  >CGV 광교</a
+                >
               </li>
               <script type="text/javascript" src="java.js"></script>
             </ul>
@@ -147,50 +250,74 @@
         </div>
       </nav>
     </center>
-<div>
-  <center>
-    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" style =" margin-top: 10px ;">
-      <em>How to use</em>
-     </button>
-  </center>
-</div>
+    <div>
+      <center>
+        <button
+          type="button"
+          class="btn btn-light"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          style="margin-top: 10px; margin-bottom: 20px"
+        >
+          <em>How to use</em>
+        </button>
+      </center>
+    </div>
 
-      <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">More Information</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p style ="font-weight: bold;"><em>MOVIE-Selector</em>는 당신을 위한 최고의 영화를 추천합니다.</p>
-        <p>Choose A Movie theater에서 원하시는 영화관을 고르시면</p>
-        <p>해당 영화관에서 상영중인 영화들을 네이버, CGV, 메타크리틱 등</p>
-        <p>신뢰도 높은 사이트에서 자동으로 영화 평점 조합 후,</p>
-        <p>자동으로 가장 인기 있는 영화 부터 추천해드립니다.</p>
-        <p>추천 받으신 영화에 대해 더 궁금하시다면,</p>
-        <p>'자세히' 버튼을 누르시거나 영화 포스터를 누르시면</p>
-        <p>해당 영화 정보 사이트에서 자세한 정보를 찾으실수 있습니다.  </p>
-       
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-       
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">More Information</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p style="font-weight: bold">
+              <em>MOVIE-Selector</em>는 당신을 위한 최고의 영화를 추천합니다.
+            </p>
+            <p>Choose A Movie theater에서 원하시는 영화관을 고르시면</p>
+            <p>해당 영화관에서 상영중인 영화들을 네이버, CGV, 메타크리틱 등</p>
+            <p>신뢰도 높은 사이트에서 자동으로 영화 평점 조합 후,</p>
+            <p>자동으로 가장 인기 있는 영화 부터 추천해드립니다.</p>
+            <p>추천 받으신 영화에 대해 더 궁금하시다면,</p>
+            <p>'자세히' 버튼을 누르시거나 영화 포스터를 누르시면</p>
+            <p>해당 영화 정보 사이트에서 자세한 정보를 찾으실수 있습니다.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
