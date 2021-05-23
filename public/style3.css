@@ -26,3 +26,8 @@ a.top {
   margin-bottom: 5px;
   text-decoration: none;
 }
+span.genre {
+  font-family: "Jua", sans-serif;
+  font-size: 1.2rem;
+  color: dodgerblue;
+}
