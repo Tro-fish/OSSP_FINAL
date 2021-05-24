@@ -1,6 +1,6 @@
 # OSSP_final
 
-오픈소스 기말프로젝트 16조!
+오픈소스 기말프로젝트 16조
 
 ## ● 목차
 
@@ -9,9 +9,14 @@
 - [행동강령 ](#-행동강령-code-of-conduct)
 - [리소스링크 ](#-리소스-링크-resource-link)
 - [릴리즈 ](#-릴리즈-release)
-- [라이센스 ](#-라이센스-license)
+- [화면예시 ](#-화면예시-screen-example)
+- [사용방법 ](#-사용방법-how-to-use)
+- [사용방법 동영상](#-사용방법-동영상-how-to-use-video)
+- [라이센스 ](#-라이센스-license)  
+
 
 ## ● 설치방법 (로컬) Local Installation
+------------
 
 ### 1. 저장소 복제 Clone the repository
 
@@ -50,15 +55,18 @@ http://localhost:8000 가 출력되면 성공입니다! 링크에서 영화관�
 </details>
 
 ## ● 기여방법 Contributing
+------------
 
 - Pull Request
 - Open Issue
 
 ## ● 행동강령 Code of Conduct
+------------
 
 이 프로젝트는 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)를 준수하고 있습니다. 자세한 내용은 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)를 참고할 수 있습니다.
 
 ## ● 리소스 링크 Resource link
+------------
 
 이 앱은 다음 모듈을 사용했습니다.
 
@@ -85,19 +93,50 @@ http://localhost:8000 가 출력되면 성공입니다! 링크에서 영화관�
 </details>
 
 ## ● 릴리즈 Release
+------------
 
 ## v1.0.0
 
 2021년 5월 24일
 안정적인 버전입니다. 기본적인 내용은 [사용방법](#)을 참고할 수 있습니다.
+## ● 화면예시 Screen Example
+------------
 
-## ● 사용 방법 안내 동영상
+### 1. 첫 화면 First Page
+   ![first](https://user-images.githubusercontent.com/80453200/119366992-7bc8e800-bcec-11eb-88b4-9254f4d274a4.png)
+
+### 2. TOP3 영화 표시 Show TOP 3 movies
+   
+   ![rankingpage_1](https://user-images.githubusercontent.com/80453200/119365667-22ac8480-bceb-11eb-9e3f-af81cb80f959.png)
+   ![rankingpage_2 ](https://user-images.githubusercontent.com/80453200/119365932-699a7a00-bceb-11eb-8898-e0233b31c6ce.png)
+
+### 3. TOP4-7 영화 표시 Show Top 4-7 movies
+   ![rankingpage_3](https://user-images.githubusercontent.com/80453200/119365975-74eda580-bceb-11eb-90b4-ad5345b56db1.png)
+
+## ● 사용 방법 How to use
+------------
+
+### 1. 메인 화면 Main Page
+![how_to_use_1](https://user-images.githubusercontent.com/80453200/119370629-753c6f80-bcf0-11eb-8b92-e240674f9693.png)
+
+### 2. 순위 화면-(1) Ranking Page-(1)
+![how_to_use_2](https://user-images.githubusercontent.com/80453200/119372682-8be3c600-bcf2-11eb-9409-fe6a843da994.png)
+
+### 3. 순위 화면-(2) Ranking Page-(2)
+![how_to_use_3](https://user-images.githubusercontent.com/80453200/119376060-84262080-bcf6-11eb-969f-c60d5c3284af.png)
+
+아래의 [사용 방법 안내 동영상](#)에서 더 자세한 설명을 확인할 수 있습니다. 
+
+
+## ● 사용 방법 안내 동영상 How to use video
+------------
 
 <a href="https://youtu.be/SVaHfW-a8i0
 " target="_blank"><img src="https://github.com/16OS-final-project/OSSP_final/blob/main/public/movie-selector.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ## ● 라이센스 License
+------------
 
 **MIT**<br/>
 자세한 내용은 [여기](https://github.com/16OS-final-project/OSSP_final/blob/main/LICENSE)를 참고할 수 있습니다.
