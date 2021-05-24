@@ -93,7 +93,7 @@ http://localhost:8000 가 출력되면 성공입니다! 링크에서 영화관�
 
 ## ● 사용 방법 안내 동영상
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text]( https://youtu.be/SVaHfW-a8i0 "Logo Title Text 1")
 
 ## ● 라이센스 License
 
