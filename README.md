@@ -94,7 +94,7 @@ http://localhost:8000 가 출력되면 성공입니다! 링크에서 영화관�
 ## ● 사용 방법 안내 동영상
 
 <a href="https://youtu.be/SVaHfW-a8i0
-" target="_blank"><img src="movie-selector.jpg" 
+" target="_blank"><img src="https://github.com/16OS-final-project/OSSP_final/blob/main/public/movie-selector.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ## ● 라이센스 License
