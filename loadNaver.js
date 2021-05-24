@@ -29,7 +29,7 @@ function searchNaver(callback) {
         let titleInnerText;
         let genreInnerText;
         let scoreInnerText;
-        const MAX = 30;
+        const MAX = 50;
         let count = 0;
 
         let root = parser.parse(data);

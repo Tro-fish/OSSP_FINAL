@@ -70,45 +70,16 @@ function loadPage(nTheather, callback) {
 
       let body1 = `<div class="container">
       <img
-          class="ps-0 pe-0 rounded-3 w-100"
-          src="theather${nTheather}.jpg"
-          alt="Title_Logo"
-        />
+        class="ps-0 pe-0 rounded-3 w-100"
+        src="theather${nTheather}.jpg"
+        alt="Title_Logo"
+      />
     </div>
     <hr />
-    <div class="container">`;
+    <div class="container">
+      <div class="row g-4 row mt-3 mb-5">`;
 
       let body2 = "";
-      if (second.title)
-        body2 += `
-      <div class="row g-4 row mt-3 mb-5">
-        <div class="col-lg-4 col-md-12 col-sm-12">
-          <div
-            class="card shadow ps-0 pe-0 rounded-3 w-100"
-            style="width: 22rem"
-          >
-            <a target="_blank" href="${second.detail}">
-              <img
-                src="${second.img}"
-                class="card-img-second ps-0 pe-0 rounded-3 w-100"
-                alt="현재 상영 2위"
-              />
-            </a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <strong>NO.2</strong><br />${second.title}
-              </h4>
-              <p class="card-text">
-                <span class="genre">${second.genre}</span>
-                <br />개봉일: ${second.date}<br />평균평점: ${second.avg}
-                <br />평균예매율: ${second.reserve}%
-              </p>
-
-              ${detailButton(second)}
-            </div>
-          </div>
-        </div>`;
-
       if (first.title)
         body2 += `<div class="col-lg-4 col-md-12 col-sm-12">
           <div
@@ -133,6 +104,35 @@ function loadPage(nTheather, callback) {
               </p>
 
               ${detailButton(first)}
+            </div>
+          </div>
+        </div>`;
+
+      if (second.title)
+        body2 += `
+        <div class="col-lg-4 col-md-12 col-sm-12">
+          <div
+            class="card shadow ps-0 pe-0 rounded-3 w-100"
+            style="width: 22rem"
+          >
+            <a target="_blank" href="${second.detail}">
+              <img
+                src="${second.img}"
+                class="card-img-second ps-0 pe-0 rounded-3 w-100"
+                alt="현재 상영 2위"
+              />
+            </a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <strong>NO.2</strong><br />${second.title}
+              </h4>
+              <p class="card-text">
+                <span class="genre">${second.genre}</span>
+                <br />개봉일: ${second.date}<br />평균평점: ${second.avg}
+                <br />평균예매율: ${second.reserve}%
+              </p>
+
+              ${detailButton(second)}
             </div>
           </div>
         </div>`;
@@ -164,8 +164,9 @@ function loadPage(nTheather, callback) {
             </div>
           </div>
         </div>
-      </div>`;
-      body2 += `</div>`;
+      `;
+      body2 += `</div>
+    </div>`;
 
       let body3_top = `<div class="container">
       <hr />`;
