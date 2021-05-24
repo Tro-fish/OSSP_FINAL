@@ -9,10 +9,8 @@
 - [행동강령 ](#-행동강령-code-of-conduct)
 - [리소스링크 ](#-리소스-링크-resource-link)
 - [릴리즈 ](#-릴리즈-release)
-- [라이센스 ](#-라이센스-license)  
+- [라이센스 ](#-라이센스-license)
 
-  
-  
 ## ● 설치방법 (로컬) Local Installation
 
 ### 1. 저장소 복제 Clone the repository
@@ -49,7 +47,7 @@ http://localhost:8000 가 출력되면 성공입니다! 링크에서 영화관�
 ![local example](https://user-images.githubusercontent.com/41911523/119309178-eb1ce880-bca8-11eb-831e-62921c308ed2.PNG)
 
 </div>
-</details>  
+</details>
 
 ## ● 기여방법 Contributing
 
@@ -58,8 +56,7 @@ http://localhost:8000 가 출력되면 성공입니다! 링크에서 영화관�
 
 ## ● 행동강령 Code of Conduct
 
-이 프로젝트는 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)를 준수하고 있습니다. 자세한 내용은 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)를 참고할 수 있습니다.  
-
+이 프로젝트는 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)를 준수하고 있습니다. 자세한 내용은 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)를 참고할 수 있습니다.
 
 ## ● 리소스 링크 Resource link
 
@@ -92,11 +89,13 @@ http://localhost:8000 가 출력되면 성공입니다! 링크에서 영화관�
 ## v1.0.0
 
 2021년 5월 24일
-안정적인 버전입니다. 기본적인 내용은 [사용방법](#)을 참고할 수 있습니다.  
+안정적인 버전입니다. 기본적인 내용은 [사용방법](#)을 참고할 수 있습니다.
 
+## ● 사용 방법 안내 동영상
+
+<iframe width="640" height="360" src="https://youtu.be/SVaHfW-a8i0" frameborder="0" gesture="media" allowfullscreen=""></iframe>
 
 ## ● 라이센스 License
 
 **MIT**<br/>
-자세한 내용은 [여기](https://github.com/16OS-final-project/OSSP_final/blob/main/LICENSE)를 참고할 수 있습니다.  
-
+자세한 내용은 [여기](https://github.com/16OS-final-project/OSSP_final/blob/main/LICENSE)를 참고할 수 있습니다.
