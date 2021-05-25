@@ -1,7 +1,7 @@
 {
   "name": "skku-movie-selector",
   "description": "오픈소스 기말프로젝트 16조!",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "app.js",
   "scripts": {
     "test": "",
