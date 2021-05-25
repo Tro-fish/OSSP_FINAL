@@ -11,19 +11,6 @@
 </div>
 </details>
 
-## ● 목차
-------------
-
-- [설치방법 ](#-설치방법-로컬-local-installation)
-- [기여방법 ](#-기여방법-contributing)
-- [행동강령 ](#-행동강령-code-of-conduct)
-- [리소스링크 ](#-리소스-링크-resource-link)
-- [릴리즈 ](#-릴리즈-release)
-- [화면예시 ](#-화면예시-screen-example)
-- [사용방법 ](#-사용-방법-how-to-use)
-- [사용방법 동영상](#-사용-방법-안내-동영상-how-to-use-video)
-- [라이센스 ](#-라이센스-license)
-
 
 ## ● 설치방법 (로컬) Local Installation
 ------------
@@ -113,14 +100,14 @@ http://localhost:8000 가 출력되면 성공입니다! 링크에서 영화관�
 ------------
 
 ### 1. 첫 화면 First Page
-   ![first](https://user-images.githubusercontent.com/80453200/119366992-7bc8e800-bcec-11eb-88b4-9254f4d274a4.png)
+   ![mainPage](https://user-images.githubusercontent.com/80453200/119433176-aea4c780-bd50-11eb-8126-6541dcf78c2f.png)
 
 ### 2. TOP3 영화 표시 Show TOP 3 movies
    
-   ![rankingpage_1](https://user-images.githubusercontent.com/80453200/119365667-22ac8480-bceb-11eb-9e3f-af81cb80f959.png)
+   ![rankingPage_1](https://user-images.githubusercontent.com/80453200/119433017-54a40200-bd50-11eb-8d17-9a4131c33ea7.png)
 
 ### 3. TOP4-7 영화 표시 Show Top 4-7 movies
-   ![rankingpage_3](https://user-images.githubusercontent.com/80453200/119365975-74eda580-bceb-11eb-90b4-ad5345b56db1.png)
+   ![rankingPage_2](https://user-images.githubusercontent.com/80453200/119433039-61285a80-bd50-11eb-9c81-7ea295a0ab4e.png)
 
 ## ● 사용 방법 How to use
 ------------
