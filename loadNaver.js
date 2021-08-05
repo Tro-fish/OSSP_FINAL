@@ -13,7 +13,7 @@ function searchNaver(callback) {
     const https = require("https");
     const parser = require("node-html-parser");
 
-    let urlNaver = "https://movie.naver.com/movie/running/current.nhn";
+    let urlNaver = "https://movie.naver.com/movie/running/current.naver";
 
     let movieDatabase = new Array();
     let navertitleList = new Array();
